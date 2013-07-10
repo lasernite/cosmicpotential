@@ -1,10 +1,10 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
-from openshift.models import *
+from AmongU.models import *
 from django.views.decorators.csrf import csrf_exempt
 import simplejson as json
 
-from openshift.models import *
+
 
 ###
 ### AUTHENTICATION

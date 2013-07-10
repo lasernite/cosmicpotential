@@ -1,7 +1,7 @@
 import os
 from django.shortcuts import render_to_response, render
 from django.http import HttpResponse, HttpResponseRedirect
-from openshift.models import UserProfile, Event
+from AmongU.models import UserProfile, Event
 from django.views.decorators.csrf import csrf_exempt
 
 from forms import EventForm
