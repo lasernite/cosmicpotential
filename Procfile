@@ -1,1 +1,1 @@
-web: gunicorn AmongU.wsgi
+web: gunicorn AmongU.AmongU.wsgi
