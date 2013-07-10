@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Among U</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/media/css/bootstrap.css" rel="stylesheet" />
+    <link href="/media/css/style.css" rel="stylesheet" />
+    <script src="http://twitter.github.io/bootstrap/assets/js/jquery.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://twitter.github.io/bootstrap/assets/js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="/media/js/facebook_api.js"></script>
+    <script src="/media/js/script.js"></script>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/">Among U</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <span class="pLoginWait"><img id="please-wait" src="http://loadinggif.com/generated-image?imageId=30&bgColor=%23000000&fgColor=%23ffffff&transparentBg=1&download=0&random=0.554676596308127" /></span>
+              <span class="pLoginBad"><a id="facebook-new-login" onclick="login()" href="#"><img src="http://static.bambuser.com/r/img/webservices/facebook-login-button.png" alt="Login with Facebook" /></a></span>
+              <span class="pLoginDone">
+                <img src="/media/img/white_amongu_message_icon.png" width="40px" height="40px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="/media/img/amongu_notifications.png" width="40px" height="40px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <img id="imgUser" src="#" class="headerprofileimage pPhotoUrl" style="width: 40px; height: 40px;" />&nbsp;
+                <a href="#" class=".pProfileUrl"><span class="pName"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="logout();"><img src="http://www.picturehealing.com/dashboard/app/Assets/fblogout.png" /></a>
+              </span>
+              
+                
+            </p>
+            
+            <form class="navbar-search pull-left imput-append" style="width: 40%">
+                <input id="txtsearch" type="text" onkeyup="search($(this).val(), xhr_search+1);" class="search-query" placeholder="Search" style="width: 80%">
+                <button id="btnclear_search" onclick="clear_search()" class='btn add-on btn-inverse' type="button" style='font-size: x-large'>&times;</button>
+                <script>$('#btnclear_search').hide();</script>
+            </form>           
+            
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid" style="padding-top: 20px;">
+        <div class="span3">
+          <div class="pLoginDone row-fluid">
+           <!-- This was the profile image in the top left corner -->
+            <div class="span9">
+                <!-- this is previously where the username was in top left corner -->
+                <br >
+                <input type="text" onkeyup="user_city=$(this).val();display_news_feed(encodeURIComponent(user_city), false);" id="txtLocation"></input>
+            </div>            
+          </div>
+          
+          <br />
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li><a onclick="display_create_event();" href="#">Create Event</a></li>
+              <li class="nav-header"></li>
+              <li><a onclick="display_home_feed();" href="#">Stream</a></li>
+              <li><a href="#">Posts</a></li>
+              <li class="active"><a href="#">Events</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Chat</a></li>
+              <li class="nav-header"><a href="#">Groups</a></li>
+              <li><a href="#" onclick="search('concert')">Music</a></li>
+              <li><a onclick="display_create_group();" href="#">Create Group</a></li>              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9" id="main_content">
+         <div id="search_feed">
+            <h4><span class="muted">Searching for </span><span id="search_term"></span></h4>
+         </div><script>$('#search_feed').hide();</script>
+         <div id="news_feed">
+          <div class="media">
+            <a class="pull-left" href="#">
+            <img class="media-object" data-src="holder.js/64x64">
+            </a>
+            <div class="media-body">
+            <h4 class="media-heading"></h4>            
+            </div>
+          </div>          
+         </div>         
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; AmongU 2013</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-alert.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-modal.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tab.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-popover.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-button.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-carousel.js"></script>
+    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
