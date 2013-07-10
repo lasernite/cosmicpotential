@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'AmongU.views.home', name='home'),
     url(r'^$', 'views.static_view', {'template_path': 'home.html'}),
     # url(r'^AmongU/', include('AmongU.foo.urls')),
+    
+    url(r'^media/((?:static)|(?:css)|(?:js)|(?:img))/(\w{1,50})\.(\w{1,10})$', 'views.static_handler'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

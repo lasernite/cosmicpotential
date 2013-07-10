@@ -11,7 +11,7 @@ def static_handler(request, directory, file_name, extension):
     # Read file into string s
     PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
     file_name = file_name + '.' + extension
-    f = open(os.path.join(PROJECT_DIR, '..', '..', 'static', directory, file_name))
+    f = open(os.path.join(PROJECT_DIR, '..', 'media', directory, file_name))
     s = f.read()
     f.close()
     
