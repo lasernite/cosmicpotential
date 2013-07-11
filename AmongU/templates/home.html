@@ -1,97 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Among U</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
 
-    <!-- New Foundation Styles -->
-    <link href="/media/css/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="/media/css/foundation.css" media="screen, projector, print" rel="stylesheet" type="text/css" />
-      
-    <!-- Le styles -->
-  <!--  <link href="/media/css/bootstrap.css" rel="stylesheet" /> -->
-    <link href="/media/css/style.css" rel="stylesheet" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>AmongU</title>
+
+  <!-- Included CSS Files -->
+  
+  <link rel="stylesheet" href="/media/css/normalize.css">
+  <link rel="stylesheet" href="/media/css/foundation.css">
     
-    <script src="http://twitter.github.io/bootstrap/assets/js/jquery.js"></script>
-    <script src="/media/js/custom.modernizr.js"></script>
-    <!-- <style type="text/css">
-     body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
+  <script src="http://twitter.github.io/bootstrap/assets/js/jquery.js"></script>
+  <script src="/media/js/vendor/custom.modernizr.js"></script>
+  
+  
+  <link href="/media/css/style.css" rel="stylesheet" />
+  <script src="/media/js/facebook_api.js"></script>
+  <script src="/media/js/script.js"></script>
 
-      @media (max-width: 980px) {
-        /* Enable use of floated navbar text */
-        .navbar-text.pull-right {
-          float: none;
-          padding-left: 5px;
-          padding-right: 5px;
-        }
-      }
-    </style>-->
+</head>
+<body>
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <!-- <script src="http://twitter.github.io/bootstrap/assets/js/html5shiv.js"></script>= -->
-    <![endif]-->
-    <script src="/media/js/facebook_api.js"></script>
-    <script src="/media/js/script.js"></script>
-  </head>
+  <!-- Header and Nav -->
 
-  <body>
-    
-    <!-- Header and Nav -->
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="panel">
-          
-          
-          
-          <div class="navbar-inner">
-        <div class="container-fluid">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="/">Among U</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              <span class="pLoginWait"><img id="please-wait" src="http://loadinggif.com/generated-image?imageId=30&bgColor=%23000000&fgColor=%23ffffff&transparentBg=1&download=0&random=0.554676596308127" /></span>
-              <span class="pLoginBad"><a id="facebook-new-login" onclick="login()" href="#"><img src="http://static.bambuser.com/r/img/webservices/facebook-login-button.png" alt="Login with Facebook" /></a></span>
-              <span class="pLoginDone">
-                <img src="/media/img/white_amongu_message_icon.png" width="40px" height="40px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="/media/img/amongu_notifications.png" width="40px" height="40px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <img id="imgUser" src="#" class="headerprofileimage pPhotoUrl" style="width: 40px; height: 40px;" />&nbsp;
-                <a href="#" class=".pProfileUrl"><span class="pName"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="logout();"><img src="http://www.picturehealing.com/dashboard/app/Assets/fblogout.png" /></a>
-              </span>
-              
-                
-            </p>
-            
-            <form class="navbar-search pull-left imput-append" style="width: 40%">
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel">
+        <div class="large-2 columns">
+          <h1>AmongU</h1>
+        </div>
+        <div class="large-10 columns">
+          <form class="navbar-search pull-left imput-append" style="width: 40%">
                 <input id="txtsearch" type="text" onkeyup="search($(this).val(), xhr_search+1);" class="search-query" placeholder="Search" style="width: 80%">
                 <button id="btnclear_search" onclick="clear_search()" class='btn add-on btn-inverse' type="button" style='font-size: x-large'>&times;</button>
                 <script>$('#btnclear_search').hide();</script>
             </form>           
             
-          </div><!--/.nav-collapse -->
+          
+          <span class="pLoginWait"><img id="please-wait" src="http://loadinggif.com/generated-image?imageId=30&bgColor=%23000000&fgColor=%23ffffff&transparentBg=1&download=0&random=0.554676596308127" /></span>
+                  <span class="pLoginBad"><a id="facebook-new-login" onclick="login()" href="#"><img src="http://static.bambuser.com/r/img/webservices/facebook-login-button.png" alt="Login with Facebook" /></a></span>
+                  <span class="pLoginDone">
+                    <img src="/media/img/white_amongu_message_icon.png" width="40px" height="40px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="/media/img/amongu_notifications.png" width="40px" height="40px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <img id="imgUser" src="#" class="headerprofileimage pPhotoUrl" style="width: 40px; height: 40px;" />&nbsp;
+                    <a href="#" class=".pProfileUrl"><span class="pName"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="logout();"><img src="http://www.picturehealing.com/dashboard/app/Assets/fblogout.png" /></a>
+          </span>
+        </div>
+        <div style="clear:both"></div>
+      </div>      
+    </div>    
+  </div>
+
+  <!-- End Header and Nav -->
+
+
+  <div class="row">
+
+
+
+ <!-- Nav Sidebar -->
+        <!-- Main Feed -->
+    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+    <div class="large-6 columns push-3">
+
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class="small-3 large-2 columns "><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div class="small-9 large-10 columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="inline-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+
+
+          <h6>2 Comments</h6>
+          <div class="row">
+            <div class="small-3 large-2 columns"><img src="http://placehold.it/50x50&text=[img]" /></div>
+            <div class="small-9 large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
+          <div class="row">
+            <div class="small-3 large-2 columns"><img src="http://placehold.it/50x50&text=[img]" /></div>
+            <div class="small-9 large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
         </div>
       </div>
-          
-          
-          
+      <!-- End Feed Entry -->
+
+      <hr />
+
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class="small-3 large-2 columns"><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div class="small-9 large-10 columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="inline-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Feed Entry -->
+
+      <hr />
+
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class="small-3 large-2 columns "><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div class="small-9 large-10 columns ">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="inline-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+
+
+          <h6>2 Comments</h6>
+          <div class="row">
+            <div class="small-3 large-2 columns"><img src="http://placehold.it/50x50&text=[img]" /></div>
+            <div class="small-9 large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Feed Entry -->
+
+    </div>
+
+    <!-- This is source ordered to be pulled to the left on larger screens -->
+    <div class="large-3 columns pull-6">
+      <div class="panel">
+        <a href="#"><img src="http://placehold.it/300x240&text=[img]" /></a>
+        <h5><a href="#">Your Name</a></h5>
+        
+        <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+      <section class="section">
+        <h5 class="title"><a href="#">Section 1</a></h5>
+      </section>
+      <section class="section">
+        <h5 class="title"><a href="#">Section 2</a></h5>
+      </section>
+      <section class="section">
+        <h5 class="title"><a href="#">Section 3</a></h5>
+      </section>
+      <section class="section">
+        <h5 class="title"><a href="#">Section 4</a></h5>
+      </section>
+      <section class="section">
+        <h5 class="title"><a href="#">Section 5</a></h5>
+      </section>
+      <section class="section">
+        <h5 class="title"><a href="#">Section 6</a></h5>
+      </section>
+      </div>
+
+      </div>
+    </div>
+ 
+ 
+    <!-- Right Sidebar -->
+    <!-- On small devices this column is hidden -->
+    <aside class="large-3 columns hide-for-small">
+      <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+      <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+    </aside>
+
+  </div>
+
+
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-5 columns">
+          <p>&copy; Copyright AmongU</p>
+        </div>
+        <div class="large-7 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Section 1</a></li>
+            <li><a href="#">Section 2</a></li>
+            <li><a href="#">Section 3</a></li>
+            <li><a href="#">Section 4</a></li>
+            <li><a href="#">Section 5</a></li>
+            <li><a href="#">Section 6</a></li>
+          </ul>
         </div>
       </div>
     </div>
+  </footer>
 
-    
+  <script>
+  document.write('<script src=js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+  </script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container-fluid">
       <div class="row-fluid" style="padding-top: 20px;">
         <div class="span3">
@@ -137,30 +274,3 @@
         </div><!--/span-->
       </div><!--/row-->
 
-      <hr>
-
-      <footer>
-        <p>&copy; AmongU 2013</p>
-      </footer>
-
-    </div><!--/.fluid-container-->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-alert.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-modal.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tab.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tooltip.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-popover.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-button.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-carousel.js"></script>
-    <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-typeahead.js"></script>
-
-  </body>
-</html>
