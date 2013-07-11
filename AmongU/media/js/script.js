@@ -62,25 +62,33 @@ function display_news_feed(query, link)
         if (response['paging'] == undefined) response['paging'] = {};
         if (response['paging']['previous'] == undefined) response['paging']['previous'] = '#';
         if (response['paging']['next'] == undefined) response['paging']['next'] = '#';
-        var pagination = '<br /><div class="pagination pagination-large"><ul><li><a href="#" onclick="display_news_feed(\'' + response['paging']['previous'] + '\', true);">Prev</a></li><li><a href="#" onclick="display_news_feed(\'' + response['paging']['next'] + '\', true);">Next</a></li></ul></div><br />';
-        $('#news_feed').append(pagination);
+       // var pagination = '<br /><div class="pagination pagination-large"><ul><li><a href="#" onclick="display_news_feed(\'' + response['paging']['previous'] + '\', true);">Prev</a></li><li><a href="#" onclick="display_news_feed(\'' + response['paging']['next'] + '\', true);">Next</a></li></ul></div><br />';
+      //  $('#news_feed').append(pagination);
         for (var i = 0; i < response['data'].length; i++) {
             var item = response['data'][i];
             
-            
-            var txt = '<div class="media"> \
+            var txt = '<div class="row"> \
+                <div class="small-12 large-12 columns"> \
+                    <p><strong>' + item['name'] + '</strong><br /><span id="event' + item['id'] + '">' + item['start_time'] + '</span></p> \
+                    <ul class="inline-list"> \
+                        <li><a href="">Reply</a></li> \
+                        <li><a href="">Share</a></li> \
+                    </ul> \
+                </div> \
+            </div><hr />';
+            /*var txt = '<div class="media"> \
                     <a class="pull-left" href="#"> \
                         <img class="media-object" src="http://www.sixstarpro.com/images/bullets/bullet_arrow.png"> \
                     </a> \
                     <div class="media-body">  \
                         <h4 class="media-heading"><a href="#" onclick="show_event_description(\'' + item['id'] + '\')">' + item['name'] + '</a></h4><div id="event' + item['id'] + '"></div>            \
                     </div> \
-                </div>';
+                </div>';*/
             
            
             $('#news_feed').append(txt);
         }
-        $('#news_feed').append(pagination);
+       // $('#news_feed').append(pagination);
     });
 }
 
