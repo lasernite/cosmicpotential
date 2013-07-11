@@ -85,26 +85,32 @@ function display_news_feed(query, link)
 }
 
 function show_event_description(event_id) {
-  if ($('#event' + event_id).html() == '')
-  {          
-    FB.api('/' + event_id, function(response) {
-          console.log(response);
-          var s = '<table class="table table-bordered">';
-          
-          if (response['description'] != undefined)
-            s += '<tr><td>Description</td><td><pre>' + response['description'] + '</pre></td></tr>';
-          
-          s += '</table>';
-          $('#event' + event_id).html(s);
-          
-    });
-  }
-  else
-  {
-    $('#event' + event_id).html('');
-  }
+    if ($('#event' + event_id).html() == '') {          
+        FB.api('/' + event_id, function(response) {
+            console.log(response);
+            var s = '<table class="table table-bordered">';
+             
+            if (response['description'] != undefined)
+                s += '<tr><td>Description</td><td><pre>' + response['description'] + '</pre></td></tr>';
+            
+            s += '</table>';
+            $('#event' + event_id).html(s);
+        });
+    } else {
+      $('#event' + event_id).html('');
+    }
 }
 
 function display_create_event() {
     $('#main_content').load('/event/create');
+}
+
+function event_create() {
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: data,
+        success: success,
+        dataType: dataType
+    });     
 }
