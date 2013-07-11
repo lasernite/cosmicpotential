@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from AmongU.models import *
 from django.views.decorators.csrf import csrf_exempt
 import json
-
+import urllib2
 
 
 ###
@@ -18,12 +18,12 @@ Checks the supplied input_token against facebook servers and logs in the user if
 '''
 def api_user_login(request):
   input_token = request.GET['input_token']
+  print input_token
   
-  import urllib2
   access_token = urllib2.urlopen(r'https://graph.facebook.com/oauth/access_token?client_id=522257347834600&client_secret=bba15011bbe37b7054e34ed71d030218&grant_type=client_credentials').read()    
-  
+  print access_token
   resp = json.loads(urllib2.urlopen(r'https://graph.facebook.com/debug_token?input_token=' + input_token + '&' + access_token).read())
-    
+  print resp
   if resp['data']['is_valid'] == True and resp['data']['app_id'] == 522257347834600:
     profile = UserProfile.objects.filter(facebook_id=str(resp['data']['user_id']))
     if len(profile) == 0:
@@ -96,6 +96,17 @@ def api_event_create(request):
     'id': entry.id,
   }
   return HttpResponse(json.dumps(response), mimetype='application/json')
+
+'''
+/api/event/get
+PARAMS: id
+'''
+def api_event_get(request):
+  id = request.REQUEST['id']
+  if id == 'all':
+    return HttpResponse(urllib2.urlopen('https://graph.facebook.com/search?q=' + request.REQUEST['q'] + '&type=event&method=get&access_token=' + request.session['input_token'] + '&pretty=0').read(), mimetype='application/json')
+  else:
+    return HttpResponse(urllib2.urlopen('https://graph.facebook.com/' + id + '?access_token=' + request.session['input_token'] + '&pretty=0').read(), mimetype='application/json')
 
 '''
 /api/event/delete

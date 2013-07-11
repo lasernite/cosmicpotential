@@ -50,13 +50,10 @@ function display_home_feed() {
 
 function display_news_feed(query, link)
 {
-    if (query == '#') return;
-    var lts = '/search?q=' + query + '&type=event';
-    if (link) {
-        lts = query.split('facebook.com',2)[1];
-    } 
+    //if (query == '#') return;
+    var lts = '/api/event/get?q=' + query + '&id=all';
   
-    FB.api(lts, function(response) {
+    $.ajax({url: lts, success: function(response) {
         console.log(response);
         $('#news_feed').empty();
         if (response['paging'] == undefined) response['paging'] = {};
@@ -89,7 +86,7 @@ function display_news_feed(query, link)
             $('#news_feed').append(txt);
         }
        // $('#news_feed').append(pagination);
-    });
+    }});
 }
 
 function show_event_description(event_id) {

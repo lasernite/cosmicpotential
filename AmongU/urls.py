@@ -32,6 +32,7 @@ urlpatterns = patterns('',
     url(r'^api/user/login$', 'views.api_user_login'),
     url(r'^api/user/logout$', 'views.api_user_logout'),
     
+    url(r'^api/event/get$', 'views.api_event_get'),
     url(r'^api/event/create$', 'views.api_event_create'),
     url(r'^api/event/delete$', 'views.api_event_delete'),
 )
