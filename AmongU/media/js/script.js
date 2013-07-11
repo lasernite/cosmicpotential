@@ -69,7 +69,7 @@ function display_news_feed(query, link)
             
             var txt = '<div class="row"> \
                 <div class="small-12 large-12 columns"> \
-                    <p><strong>' + item['name'] + '</strong><br /><span id="event' + item['id'] + '">' + item['start_time'] + '</span></p> \
+                    <p><a href="javascript:void(0);" onclick="show_event_description(\'' + item['id'] + '\');"><strong>' + item['name'] + '</strong></a><br /><span id="event' + item['id'] + '">' + item['start_time'] + '</span><br/><span id="eventdesc' + item['id'] + '"></span></p> \
                     <ul class="inline-list"> \
                         <li><a href="">Reply</a></li> \
                         <li><a href="">Share</a></li> \
@@ -93,19 +93,17 @@ function display_news_feed(query, link)
 }
 
 function show_event_description(event_id) {
-    if ($('#event' + event_id).html() == '') {          
+    if ($('#eventdesc' + event_id).html() == '') {
+        $('#eventdesc' + event_id).html('Loading Description...');
         FB.api('/' + event_id, function(response) {
             console.log(response);
-            var s = '<table class="table table-bordered">';
-             
+            var s = "";
             if (response['description'] != undefined)
-                s += '<tr><td>Description</td><td><pre>' + response['description'] + '</pre></td></tr>';
-            
-            s += '</table>';
-            $('#event' + event_id).html(s);
+                s += '<pre>' + response['description'] + '</pre>';
+            $('#eventdesc' + event_id).html(s);
         });
     } else {
-      $('#event' + event_id).html('');
+      $('#eventdesc' + event_id).html('');
     }
 }
 
