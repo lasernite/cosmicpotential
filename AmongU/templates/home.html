@@ -29,35 +29,80 @@
 
   <!-- Header and Nav -->
 
+  
+  
   <div class="row">
-    <div class="large-12 columns">
-      <div class="panel">
-        <div class="large-3 columns">
-          <h1>AmongU</h1>
-        </div>
-        <div class="large-3 columns">
-          <form class="navbar-search pull-left imput-append" style="width: 100%">
-                <input id="txtsearch" type="text" onkeyup="search($(this).val(), xhr_search+1);" class="search-query" placeholder="Search" style="width: 100%">
-                <button id="btnclear_search" onclick="clear_search()" class='btn add-on btn-inverse' type="button" style='font-size: x-large'>&times;</button>
-                <script>$('#btnclear_search').hide();</script>
-            </form>   
-        </div>        
-            
-          <div class="large-6 columns">
-          <span class="pLoginWait"><img id="please-wait" src="http://loadinggif.com/generated-image?imageId=30&bgColor=%23000000&fgColor=%23ffffff&transparentBg=1&download=0&random=0.554676596308127" /></span>
-                  <span class="pLoginBad"><a id="facebook-new-login" onclick="login()" href="#"><img src="http://static.bambuser.com/r/img/webservices/facebook-login-button.png" alt="Login with Facebook" /></a></span>
-                  <span class="pLoginDone">
-                    <img src="/media/img/white_amongu_message_icon.png" width="40px" height="40px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="/media/img/amongu_notifications.png" width="40px" height="40px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <img id="imgUser" src="#" class="headerprofileimage pPhotoUrl" style="width: 40px; height: 40px;" />&nbsp;
-                    <a href="#" class=".pProfileUrl"><span class="pName"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="logout();"><img src="http://www.picturehealing.com/dashboard/app/Assets/fblogout.png" /></a>
-          </span>
-        </div>
-        <div style="clear:both"></div>
-      </div>      
-    </div>    
-  </div>
+    <div class="contain-to-grid sticky">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="#">AmongU </a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
 
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li class="divider"></li>
+          <li class="active">    
+            <li class="has-form">
+                <form class="navbar-search pull-left imput-append" style="width: 100%">
+                      <input id="txtsearch" type="text" onkeyup="search($(this).val(), xhr_search+1);" class="search-query" placeholder="Search" style="width: 100%">
+                      <button id="btnclear_search" onclick="clear_search()" class='btn add-on btn-inverse' type="button" style='font-size: x-large'>&times;</button>
+                      <script>$('#btnclear_search').hide();</script>
+                  </form>
+              </li></li>
+          <li class="divider"></li> 
+          <li><img src="/media/img/white_amongu_message_icon.png" width="40px" height="40px" /></li>
+          <li class="divider"></li>
+         
+          <li class="has-dropdown"><img src="/media/img/amongu_notifications.png" width="40px" height="40px" />
+
+            <ul class="dropdown">
+              <li><a href="#">You've been invited to 'Fairfield Education Reform Initiative'</a></li>
+              <li><a href="#">John Stine commented on your comment: 'We've got to find the bliss in education, else suffering and ineffectuality are inevitable'</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Mary Jane and 11 others have joined your event 'Reggae Music Festival'</a></li>
+              <li><a href="#">Bob Daniels invited you to join the group 'Entrepreneur's Association of Fairfield'</a></li>
+              <li><a href="#">Max Dim and 18 others have joined your group 'Midwest Hackers'</a></li>
+              <li class="divider"></li>
+              <li><a href="#">See all &rarr;</a></li>
+            </ul>
+          </li>
+          <li class="divider"></li>
+        </ul>
+
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider hide-for-small"></li>
+          <li class="has-dropdown">
+            <span class="pLoginDone">
+                    <img id="imgUser" src="#" class="headerprofileimage pPhotoUrl" style="width: 40px; height: 40px;" />&nbsp;
+              <a href="#" class=".pProfileUrl"><span class="pName"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+            
+         </li>
+          <li class="divider"></li>
+      
+          <li class="divider show-for-small"></li>
+          <li class="has-form">
+            
+            <span class="pLoginWait"><img id="please-wait" src="http://loadinggif.com/generated-image?imageId=30&bgColor=%23000000&fgColor=%23ffffff&transparentBg=1&download=0&random=0.554676596308127" /></span>
+            
+                    <span class="pLoginBad"><a id="facebook-new-login" onclick="login()" href="#"><img src="http://static.bambuser.com/r/img/webservices/facebook-login-button.png" alt="Login with Facebook" /></a></span>
+                    
+                    <span class="pLoginDone">
+                      <a href="#" onclick="logout();"><img src="http://www.picturehealing.com/dashboard/app/Assets/fblogout.png" /></a>
+            </span>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    </div>    
+    
   <!-- End Header and Nav -->
 
 
