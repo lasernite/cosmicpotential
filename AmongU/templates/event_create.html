@@ -1,6 +1,10 @@
 <h2>Create Event</h2>
 
-<form class="form-horizontal" method="POST" action="/event/create">
+
+<div class="progress round" id="progress_event_create" style="display:none; height: 10px;"><span id="progress_meter" class="meter" style="width: 20%;"></span></div>
+
+
+<form class="form-horizontal" id="event_create_form">
   <div class="control-group">
     <label class="control-label" for="inputName">Name</label>
     <div class="controls">
@@ -31,7 +35,7 @@
     
   <div class="control-group">
     <div class="controls">    
-    <button type="submit" class="btn">Create</button>
+    <button type="button" class="btn" onclick="event_create()">Create</button>
     </div>
   </div>
 </form>

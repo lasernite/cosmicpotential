@@ -2,3 +2,4 @@ venv
 *.pyc
 *~
 .sass-cache
+sqlite3.db

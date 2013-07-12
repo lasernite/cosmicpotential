@@ -72,14 +72,15 @@ PARAMS: Form data
 
 Creates events
 '''
+@csrf_exempt
 def api_event_create(request):
   if request.method != 'POST':
     return HttpResponse(json.dumps({ 'status': 'failed', 'code': 'APIEVENTCREATE_1', }), mimetype='application/json')
-  
+  print request.POST
   from forms import EventForm
   form = EventForm(request.POST)
   if not form.is_valid():
-    return HttpResponse(json.dumps({ 'status': 'failed', 'code': 'APIEVENTCREATE_2', }), mimetype='application/json')
+    return HttpResponse(json.dumps({ 'status': str(form.errors), 'code': 'APIEVENTCREATE_2', }), mimetype='application/json')
   
   owner = UserProfile.objects.get(facebook_id=request.session['user_id'])
   entry = Event(owner = owner,
