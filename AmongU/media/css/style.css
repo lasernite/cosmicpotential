@@ -8,3 +8,13 @@
 
 .pName {
   color: white; }
+
+.divider {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.notification_icon {
+  margin-top: 3px; }
+
+.message_icon {
+  margin-top: 2px; }
