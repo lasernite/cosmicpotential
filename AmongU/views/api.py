@@ -103,8 +103,11 @@ PARAMS: id
 '''
 def api_event_get(request):
   id = request.REQUEST['id']
+  input_token = request.REQUEST['input_token']
+  if request.session['input_token'] != null:
+    input_token = request.session['input_token']
   if id == 'all':
-    return HttpResponse(urllib2.urlopen('https://graph.facebook.com/search?q=' + request.REQUEST['q'] + '&type=event&method=get&access_token=' + request.session['input_token'] + '&pretty=0').read(), mimetype='application/json')
+    return HttpResponse(urllib2.urlopen('https://graph.facebook.com/search?q=' + request.REQUEST['q'] + '&type=event&method=get&access_token=' + input_token + '&pretty=0').read(), mimetype='application/json')
   else:
     return HttpResponse(urllib2.urlopen('https://graph.facebook.com/' + id + '?access_token=' + request.session['input_token'] + '&pretty=0').read(), mimetype='application/json')
 

@@ -51,7 +51,7 @@ function display_home_feed() {
 function display_news_feed(query, link)
 {
     //if (query == '#') return;
-    var lts = '/api/event/get?q=' + query + '&id=all';
+    var lts = '/api/event/get?q=' + query + '&id=all&input_token=' + access_token;
   
     $.ajax({url: lts, success: function(response) {
         console.log(response);
