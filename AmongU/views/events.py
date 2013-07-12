@@ -29,7 +29,7 @@ def event_create(request):
     else:
         form = EventForm() # An unbound form        
 
-    return render(request, 'create_event.html', {
+    return render(request, 'event_create.html', {
         'form': form,
     })
 

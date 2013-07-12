@@ -108,12 +108,69 @@ function display_event_create() {
     $('#news_feed').load('/event/create');
 }
 
+
 function event_create() {
+    progress_bar_animation($('#progress_meter'));
+    $('#progress_event_create').show();
+    _api_event_create({
+        'name': $('#id_name').val(),
+        'description': $('#id_description').val(),
+        'start_time': $('#id_start_time').val(),
+        'location': $('#id_location').val()
+    }, function(response) {
+        $('#news_feed').html('Event Created');
+    });
+    //$('#news_feed').html('Creating...');
+}
+function _api_event_create(data, success) {
+    console.log(data);
     $.ajax({
-        type: "POST",
-        url: url,
-        data: data,
-        success: success,
-        dataType: dataType
-    });     
+       type: "POST",
+       url: "/api/event/create",
+       data: data,
+       success: success,
+       dataType: 'application/json'
+    });
+}
+
+function _progress_bar_step_1(id) {
+    if ($(id).data('animate') == 'true') {    
+        $(id).css('float', 'left');
+        $(id).animate({'width': '100%'}, 400, function() {
+            _progress_bar_step_2(id);
+        });
+    }
+}
+function _progress_bar_step_2(id) {
+    if ($(id).data('animate') == 'true') {    
+        $(id).css('float', 'right');
+        $(id).animate({'width': '10%'}, 400, function() {
+            _progress_bar_step_3(id);
+        } );
+    }
+}
+function _progress_bar_step_3(id) {    
+    if ($(id).data('animate') == 'true') {    
+        $(id).css('float', 'right');
+        $(id).animate({'width': '100%'}, 400, function() {
+            _progress_bar_step_4(id);
+        } );
+    }
+}
+function _progress_bar_step_4(id) {
+    if ($(id).data('animate') == 'true') {    
+        $(id).css('float', 'left');
+        $(id).animate({'width': '10%'}, 400, function() {
+            _progress_bar_step_1(id);
+        } );
+    }
+}
+function progress_bar_animation(id) {
+    var complete = false;
+    $(id).data('animate', 'true');
+    $(id).css('width', '10%');
+    _progress_bar_step_1(id);
+}
+function progress_bar_animation_stop(id) {
+    $(id).data('animate', 'false');
 }
