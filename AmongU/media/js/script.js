@@ -104,8 +104,8 @@ function show_event_description(event_id) {
     }
 }
 
-function display_create_event() {
-    $('#main_content').load('/event/create');
+function display_event_create() {
+    $('#news_feed').load('/event/create');
 }
 
 function event_create() {

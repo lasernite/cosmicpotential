@@ -70,7 +70,24 @@
     <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
     <div class="large-9 columns push-3" id="main_content">
       
-      <div id="search_feed"></div>
+      <div class="panel large-12" id="sub_nav">
+        <div class="row">
+          <div class="large-6 columns">
+            <ul class="button-group">
+              <li><a href="javascript:void(0);" class="button">List</a></li>
+              <li><a href="javascript:void(0);" class="button">Calendar</a></li>
+            </ul>
+          </div>
+          <div class="large-6 columns">
+            <ul class="button-group">
+              <li><a href="javascript:void(0);" class="button" onclick="display_event_create();">+ Create Event</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="search_feed">
+        
+      </div>
       <div id="news_feed"></div>
 
     </div>
@@ -89,7 +106,7 @@
         <h5 class="title"><a href="#">Groups</a></h5>
       </section>
       <section class="section">
-        <h5 class="title"><a href="#">Events</a></h5>
+        <h5 class="title"><a href="#" onclick="display_news_feed();">Events</a></h5>
       </section>
       <section class="section">
         <h5 class="title"><a href="#">News</a></h5>
@@ -145,6 +162,24 @@
   <script>
    // $(document).foundation(); 
   </script>
+  
+  
+  <!-- TEMPLATES -->
+  <div style="display:none">
+    
+    
+    <div class="row">
+      <div class="small-12 large-12 columns">
+        <p><a href="javascript:void(0);" onclick="show_event_description('{event.id}');"><strong>{event.name}</strong></a><br /><span id="event{event.id}">{event.start_time}</span><br/><span id="eventdesc{event.id}"></span></p>
+        <ul class="inline-list">
+          <li><a href="">Reply</a></li>
+          <li><a href="">Share</a></li>
+        </ul>
+      </div>
+    </div><hr />
+    
+    
+  </div>
 
 </body>
 </html>
