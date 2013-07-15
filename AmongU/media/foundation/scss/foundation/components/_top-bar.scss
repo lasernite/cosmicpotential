@@ -79,6 +79,15 @@ $topbar-sticky-class: ".sticky" !default;
     top: 0;
     z-index: 99;
   }
+  
+  // Placed to fix the side navbar to maintain in view during scrolling
+  .fixed-sidebar {
+    width: 25%;
+    #{$default-float}: 0;
+    position: fixed;
+    top: 1;
+    z-index: 99;
+  }
 
   .top-bar {
     overflow: hidden;

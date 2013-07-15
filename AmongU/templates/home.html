@@ -28,9 +28,6 @@
 <body>
 
   <!-- Header and Nav -->
-
-  
-  
   
     <div class="contain-to-grid fixed">
     <nav class="top-bar">
@@ -144,10 +141,8 @@
 
     <!-- This is source ordered to be pulled to the left on larger screens -->
     <div class="large-3 columns pull-9">
-      <div class="panel">
-        <a href="#"><img class="pPhotoUrl" style="height: 178px; width: 178px;" src="http://placehold.it/300x240&text=AmongU" /></a>
-        <h5><a href="#" class="pName"></a></h5>
-        
+      <div class="panel fixed-sidebar">
+        <input type="text" onkeyup="user_city=$(this).val();display_news_feed(encodeURIComponent(user_city), false);" id="txtLocation"></input>
         <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
       <section class="section">
         <h5 class="title"><a href="#">Stream</a></h5>
