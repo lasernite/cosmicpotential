@@ -108,32 +108,31 @@
   <!-- End Header and Nav -->
 
 
- 
-
-
-
  <!-- Nav Sidebar -->
         <!-- Main Feed -->
     <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
     <div class="large-9 columns push-3" id="main_content">
       
-      <div class="panel large-12" id="sub_nav">
+      <div class="large-12" id="sub_nav">
         <div class="row">
           <div class="large-6 columns">
-            <ul class="button-group">
-              <li><a href="javascript:void(0);" class="button">List</a></li>
-              <li><a href="javascript:void(0);" class="button">Calendar</a></li>
-            </ul>
+              <dl class="sub-nav">
+                <dd class="active nav_options"><a href="#">Popular</a></dd>
+                <dd class="nav_options"><a href="#">Soonest</a></dd>
+                <dd class="nav_options"><a href="#">New</a></dd>
+                <img class="nav_calendar" src="/media/img/calendar_icon.png" width="60px" height="60px">
+                <img class="nav_map" src="/media/img/map_icon.png" width="47px" height="47px">
+              </dl>
           </div>
           <div class="large-6 columns">
             <ul class="button-group">
-              <li><a href="javascript:void(0);" class="button" onclick="display_event_create();">+ Create Event</a></li>
+              <li><a href="javascript:void(0);" class="button create_event" onclick="display_event_create();">+ Create Event</a></li>
             </ul>
           </div>
         </div>
       </div>
+      
       <div id="search_feed">
-        
       </div>
       <div id="news_feed"></div>
 
@@ -228,24 +227,6 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -25,10 +25,6 @@
   margin-top:2px;
 }
 
-#main_content {
-  padding-right: 50px;
-}
-
 .headerprofileimage{
   margin-bottom:2px;
 }
@@ -38,4 +34,22 @@
 }
 
 .no-js .section-container.auto > section > .title, .no-js .section-container.auto > .section > .title, .no-js .section-container.accordion > section > .title, .no-js .section-container.accordion > .section > .title, .no-js .section-container.tabs > section > .title, .no-js .section-container.tabs > .section > .title, .no-js .section-container.vertical-tabs > section > .title, .no-js .section-container.vertical-tabs > .section > .title, .no-js .section-container.vertical-nav > section > .title, .no-js .section-container.vertical-nav > .section > .title, .no-js .section-container.horizontal-nav > section > .title, .no-js .section-container.horizontal-nav > .section > .title { background-color: #def9fd
+}
+
+.nav_options {
+  margin-top:21px;
+  padding-bottom:21px;
+}
+
+.nav_map {
+  margin-left:10px;
+}
+
+.nav_calendar {
+  margin-left:35px;
+  margin-top:3px;
+}
+
+.create_event {
+  margin-top:10px;
 }
