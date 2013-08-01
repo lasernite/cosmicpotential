@@ -25,6 +25,21 @@
 .panel {
   background-color: #def9fd; }
 
+.top-bar {
+  background: linear-gradient(to bottom, #03c9e8, #75e8fa); }
+
+.top-bar-section .has-form {
+  background: linear-gradient(to bottom, #03c9e8, #75e8fa); }
+
+.top-bar-section ul {
+  background: linear-gradient(to bottom, #03c9e8, #75e8fa); }
+
+.contain-to-grid {
+  background: linear-gradient(to bottom, #03c9e8, #75e8fa); }
+
+.top-bar-section li a:not(.button) {
+  background: none; }
+
 .no-js .section-container.auto > section > .title, .no-js .section-container.auto > .section > .title, .no-js .section-container.accordion > section > .title, .no-js .section-container.accordion > .section > .title, .no-js .section-container.tabs > section > .title, .no-js .section-container.tabs > .section > .title, .no-js .section-container.vertical-tabs > section > .title, .no-js .section-container.vertical-tabs > .section > .title, .no-js .section-container.vertical-nav > section > .title, .no-js .section-container.vertical-nav > .section > .title, .no-js .section-container.horizontal-nav > section > .title, .no-js .section-container.horizontal-nav > .section > .title {
   background-color: #def9fd; }
 
