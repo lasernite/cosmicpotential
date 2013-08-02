@@ -57,10 +57,12 @@
 .create_event {
   margin-top: 10px; }
 
-.revolution {
-  font-size: 150px;
-  color: #ffffff;
-  font-weight: bold; }
+.hometext {
+  padding-top: 10%;
+  padding-bottom: 10%; }
+
+.hometext2 {
+  padding-top: 10%; }
 
 html {
   height: 100%; }
