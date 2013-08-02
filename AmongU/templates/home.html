@@ -29,12 +29,14 @@
 
   <!-- Header and Nav -->
   
+  <span class="pLoginDone">
+  
     <div class="contain-to-grid fixed">
     <nav class="top-bar">
       <ul class="title-area">
         <!-- Title Area -->
         <li class="name">
-          <h1><a href="#">AmongU </a></h1>
+          <h1><a href="#">AmongU</a></h1>
         </li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -85,12 +87,7 @@
           <li class="divider"></li>
       
           <li class="divider show-for-small"></li>
-          <li class="has-form">
-            
-            <span class="pLoginWait"><img id="please-wait" src="http://loadinggif.com/generated-image?imageId=30&bgColor=%23000000&fgColor=%23ffffff&transparentBg=1&download=0&random=0.554676596308127" /></span>
-            
-                    <span class="pLoginBad"><a id="facebook-new-login" onclick="login()" href="#"><img src="http://static.bambuser.com/r/img/webservices/facebook-login-button.png" alt="Login with Facebook" /></a></span>
-                    
+          <li class="has-form">              
                     <span class="pLoginDone">
                       <a href="#" onclick="logout();"><img src="media/img/fblogout.png" /></a>
                     </span>
@@ -196,6 +193,39 @@
       </div>
     </div>
   </footer>
+  
+  </span>
+  
+   <span class="pLoginWait">
+      <div style="background-image: url(media/img/homecover.jpg); height: 100%; width: 100%; background-size:cover;">
+     <img id="please-wait" src="http://loadinggif.com/generated-image?imageId=30&bgColor=%23000000&fgColor=%23ffffff&transparentBg=1&download=0&random=0.554676596308127" />
+     </div>
+     </span>
+  
+  
+<!-- Prior to Login/ Landing Page -->
+  <span class="pLoginBad">
+    <div style="background-image: url(media/img/homecover.jpg); height: 100%; width: 100%; background-size:cover;">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <center><div class="revolution">Join the Revolution,</div></center>
+      <br>
+      <br>
+      <br>
+      <br>
+      <center><a id="facebook-new-login" onclick="login()" href="#"><img src="media/img/fblogin.png" alt="Login with Facebook" height="110" width="550"/></a></center>
+      <br>
+      <br>
+      <br>
+      <br>
+      <center><div class="revolution">Among U!</div></center>
+    </div>
+    </span>
+    
 
   <script>
  /* document.write('<script src=js/vendor/' +
