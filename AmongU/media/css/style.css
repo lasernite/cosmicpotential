@@ -1,17 +1,4 @@
 /* style.scss */
-/* Landing Page */
-.revolution {
-  font-size: 150px;
-  color: #ffffff;
-  font-weight: bold; }
-
-html {
-  height: 100%; }
-
-body {
-  height: 100%; }
-
-/* Logged in */
 #navbar {
   width: 80%;
   height: 23px; }
@@ -69,3 +56,14 @@ body {
 
 .create_event {
   margin-top: 10px; }
+
+.revolution {
+  font-size: 150px;
+  color: #ffffff;
+  font-weight: bold; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%; }
